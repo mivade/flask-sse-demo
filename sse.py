@@ -33,8 +33,7 @@ def index():
 
 @app.route('/stream/', methods=['GET', 'POST'])
 def stream():
-    with app.app_context():
-        return Response(event(), mimetype="text/event-stream")
+    return Response(event(), mimetype="text/event-stream")
 
 if __name__ == "__main__":
     WSGIServer(('', 5000), app).serve_forever()
