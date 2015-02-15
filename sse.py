@@ -5,6 +5,12 @@ run it with gunicorn as follows::
 
   gunicorn -b 127.0.0.1:5000 -k gevent sse:app
 
+If testing connections with a single browser, keep in mind that the
+browser may have a setting to limit the number of persistent
+connections per server. For example, in Firefox, there is a setting
+``network.http.max-persistent-connections-per-server`` setting which
+defaults to 6 (at least on my browser).
+
 """
 
 import gevent
